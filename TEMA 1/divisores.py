@@ -31,8 +31,14 @@ def esperf(n):
     """
     return sum(divisores(n))==2*n
 
-for j in range(100):
-    print(j,divisores(j))
-    print(j,esprimo(j))
-    print(j,esperf(j))
-    
+n = int(input('Introduce un número positivo: '))
+
+tot_primos=0
+tot_perfectos=0
+
+for j in range(1,n):
+    tot_primos += esprimo(j)
+    tot_perfectos += esperf(j)
+
+print(f"Hay {tot_primos} números primos entre {1} y {n}")
+print(f"Hay {tot_perfectos} números perfectos entre {1} y {n}")

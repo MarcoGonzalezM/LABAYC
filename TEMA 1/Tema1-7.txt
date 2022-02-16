@@ -1,0 +1,46 @@
+divisores:
+6: 1 Condicional + 1 Comparación (1 ejecución)
+    CUERPO DEL CONDICIONAL-T: 1 DEVOLUCIÓN (1 ejecución)
+    CUERPO DEL CONDICIONAL-F: (1 ejecución)
+	7: 1 Asignación (1 ejecución)
+	8: 1 DIVISIÓN ENTERA (1 ejecución)
+	9: 1 Asignación (1 ejecución)
+	10: Bucle-while (1 ejecución)
+	    CUERPO DEL BUCLE: 1 Comparación (log2(n) ejecuciones)
+	    11: 1 Condicional + 1 Módulo + 1 Comparación (log2(n) ejecuciones)
+		CUERPO DEL CONDICIONAL-T: (log2(n) ejecuciones)
+		12: 1 T(append) (log2(n) ejecuciones)
+		13: 1 Condicional + 1 División + 1 Comparación (log2(n) ejecuciones)
+		    CUERPO DEL CONDICIONAL-T: (log2(n) ejecuciones)
+			14: 1 T(append)+ 1 División Entera (log2(n) ejecuciones)
+	    15: 1 Asignación + 1 División Entera (log2(n) ejecuciones)
+	    16: 1 Asignación + 1 Suma (log2(n) ejecuciones)
+	17: 1 DEVOLUCIÓN (1 ejecución)
+
+Coste = 2 + max(1, (1+1+1+1+log2(n)·(1+3+1+3+2+2+2)+1))
+Coste = 7 + 14·log2(n)
+
+esprimo:
+24: 1 Asignación + T(divisores) (1 ejecución)
+25: 1 Devolución + T(len)+ 2 Comparaciones (1 ejecución)
+
+Coste = 1 + 7 + 14log2(n) + 1 + n + 2
+Coste = 11 + 14log2(n) + n
+
+esperf:
+32: 1 Devolución + T(divisores) + T(sum) + 1 Comparación + 1 MULT (1 ejecución)
+
+Coste = 3 + n + 7 + 14log2(n)
+Coste = 10 + 14log2(n) + n
+
+main:
+34: 1 Asignación (1 ejecución)
+36: 1 Asignación (1 ejecución)
+37: 1 Asignación (1 ejecución)
+39: 1 Bucle for (n ejecuciones)
+    CUERPO DEL BUCLE (n ejecuciones)
+    40: 1 Asignación + 1 Suma + T(esprimo) (n ejecuciones)
+    41: 1 Asignación + 1 Suma + T(esperf) (n ejecuciones)
+
+Coste = 1 + 1 + 1 + n·(2 + 11 + 14log2(n) + n + 2 + 10 + 14log2(n) + n)
+Coste = 3 + 25n + 14nlog2n +2n^2

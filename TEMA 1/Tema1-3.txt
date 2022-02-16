@@ -15,12 +15,5 @@
     13: 1 Función Recursiva + 1 SUMA + 1 ASIGNACIÓN (1 ejecución)
     14: 1 DEVOLUCIÓN (1 ejecución)
 
-T(Minimo)=2
-
 Coste = 1+3+1+(1+2n)+(3+max(1,4+(1+3n+(2+T(Minimo))n(3n))+T(Calculo)+2+1))
 Coste = 17 + 5n + 3n^2 · (2+T(Minimo)) + T(Calculo)
-Coste = 17 + 5n + 12n^2 + T(Calculo)
-
-valor = n+ 
-
-T(Calculo)	
