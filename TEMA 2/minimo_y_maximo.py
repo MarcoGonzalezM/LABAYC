@@ -3,9 +3,9 @@ def minimo_y_maximo(candidatos):
     list(COMPARABLE)--> COMPARABLE,COMPARABLE
     OBJ: obtener el minimo y el máximo de una lista
     """
-    cand_max = []
-    cand_min = []
-    while (len(candidatos)>=2):
+    cand_max = []                           
+    cand_min = []                           
+    while (len(candidatos)>=2):             
         if candidatos[0]>candidatos[1]:
             cand_max.append(candidatos[0])
             del(candidatos[0])
@@ -32,7 +32,6 @@ def minimo_y_maximo(candidatos):
         elif candidatos[0]>cand_max:
             return (cand_min[0],candidatos[0])
     return (cand_min[0],cand_max[0])
-    
 
 #PROBADORES
 lista = [3,4,54,5,7,2,8,6]
