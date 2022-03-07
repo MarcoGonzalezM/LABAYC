@@ -11,7 +11,12 @@ def menor_arista_conexa(aristas,nodos):
     return menor
 
 def prim (grafo):
-    #Interpretar candidatos Convertimos el grafo a una lista de nodos y una lista de aristas
+    """ 
+    matriz_ady_grafo -> matriz_ady_grafo   
+    OBJ: Devolver el árbol de recubrimiento mínimo de un grafo dado mediante el algoritmo de Prim.
+    PRE: El grafo debe ser no dirigido.
+    """
+    #Interpretar candidatos. Convertimos el grafo a una lista de nodos y una lista de aristas
     nodos_candidatos = []
     aristas_candidatos = []
     for i in range(len(grafo)):
@@ -29,10 +34,10 @@ def prim (grafo):
     #En cuanto el árbol contenga todos los nodos, será un árbol generador del grafo
     while nodos_solucion!=nodos_candidatos:
 
-        #Obtener arista mínima y eliminarla de candidatos y añadirla a la solución
+        #Obtener arista mínima, eliminarla de candidatos y añadirla a la solución
         arista = menor_arista_conexa(aristas_candidatos,nodos_solucion)
-    
         aristas_candidatos.remove(arista)
+
         #Comprobar que la arista a añadir no genera ciclo
         if not arista[0] in nodos_solucion or not arista[1] in nodos_solucion:
             if not(arista[0] in nodos_solucion): nodos_solucion.append(arista[0])
@@ -53,5 +58,8 @@ def prim (grafo):
 
     return arbol
 
+#PROBADORES
 grafo1=[[0,1,0,5],[1,0,4,5],[0,4,0,2],[5,5,2,0]]
-print(prim(grafo1))
+grafo2=[[0,4,0,8],[4,0,3,8],[0,3,0,6],[8,8,6,0]]
+print("Resultado del grafo 1 =",prim(grafo1))
+print("Resultado del grafo 2 =",prim(grafo2))

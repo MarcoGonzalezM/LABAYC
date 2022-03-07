@@ -34,7 +34,9 @@ def minimo_y_maximo(candidatos):
     return (cand_min[0],cand_max[0])
 
 #PROBADORES
-lista = [3,4,54,5,7,2,8,6]
-lista1 = [34,10,4,8,16,23,23,2,1,3,3,9,10,64,0,35,19,38]
-(n,m) = minimo_y_maximo(lista1)
-print(f"Mínimo: {minimo_y_maximo(lista1)[0]} Máximo:{minimo_y_maximo(lista1)[1]}")
+lista = [3,4,54,5,7,2,8,6] #Datos de entrada 1
+lista1 = [34,10,4,8,16,23,23,2,1,3,3,9,10,64,0,35,19,38] #Datos de entrada 2
+(a,b) = minimo_y_maximo(lista)
+(c,d) = minimo_y_maximo(lista1)
+print(f"Resultado de la 1ª prueba => Mínimo: {a} Máximo:{b}")
+print(f"Resultado de la 2ª prueba => Mínimo: {c} Máximo:{d}")
