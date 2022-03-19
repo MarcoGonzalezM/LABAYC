@@ -6,7 +6,7 @@ def moneda_falsa(lista):
     PRE: len(lista)>=3
     """
     # Casos base (Cuándo ya no se puede dividir más se calculan los problemas pequeños por una aproximación lineal)
-    n = len(lista)
+    n = len(lista)                                                       
     if (n==6):
         return moneda_falsa(lista[0:3]) and moneda_falsa(lista[3:6])
     elif (n==5):
@@ -31,21 +31,22 @@ def moneda_falsa(lista):
                 return False
             else:
                 return None
+    #Caso general
     elif (n>6):
         # División del problema en 3 partes (Debido a que las dos partes a introducir en la báscula deben tener el mismo número de elementos)
-        k = n//3
-        parte1 = lista[0:k]
-        parte2 = lista[k:2*k]
-        parte3 = lista[2*k:]
+        k = n//3                        # División entera y Asignación: 2
+        parte1 = lista[0:k]             # Asignación: 1
+        parte2 = lista[k:2*k]           # Multiplicación y Asignación: 2
+        parte3 = lista[2*k:]            # Multiplicación y Asignación: 2
         
-        a=sum(parte1)
-        b=sum(parte2)
+        a=sum(parte1)                   # Asignación y Función sum: 1+n
+        b=sum(parte2)                   # Asignación y Función sum: 1+n
         # Si las dos primeras parte estaban en equilibrio, la moneda estará en la tercera parte
-        if a==b:
-            return moneda_falsa(parte3)
+        if a==b:                        # Comparación: 1
+            return moneda_falsa(parte3) # Función recursiva: T(n//3)
         # Si por el contrario, estaban desequilibradas, estará en la primera o segunda parte
         else:
-            return moneda_falsa(parte1+parte2)
+            return moneda_falsa(parte1+parte2) # Función recursiva: T(2*n//3)
         
 caso_1 = []
 for i in range(27):
