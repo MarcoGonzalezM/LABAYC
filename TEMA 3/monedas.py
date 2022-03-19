@@ -47,6 +47,9 @@ def moneda_falsa(lista):
         # Si por el contrario, estaban desequilibradas, estará en la primera o segunda parte
         else:
             return moneda_falsa(parte1+parte2) # Función recursiva: T(2*n//3)
+
+    #Análisis de la recursividad:
+    #T(n) = k * T(n/b) + f(n) = 2 * T(n/n//3) + f(n)
         
 caso_1 = []
 for i in range(27):
