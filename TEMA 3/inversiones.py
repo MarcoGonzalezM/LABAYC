@@ -5,14 +5,17 @@ def inversiones(preferencias1,preferencias2):
     """
 
 def burbuja(c):
+    contador = 0
     n = len(c)
     if n <=1:
-        return c
+        return c, contador
     else:
         for i in range(n-1):
             if c[i]>c[i+1]:
+                contador+=1
                 c[i],c[i+1] = c[i+1],c[i]
-        return burbuja(c[:-1])+[c[-1]]
+        r = burbuja(c[:-1])
+        return r[0]+[c[-1]],r[1]+contador
 
 
 def mergesort(c):
