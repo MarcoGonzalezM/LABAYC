@@ -32,6 +32,7 @@ def moneda_falsa(lista):
             else:
                 return None
     elif (n>6):
+        # División del problema en 3 partes (Debido a que las dos partes a introducir en la báscula deben tener el mismo número de elementos)
         k = n//3
         parte1 = lista[0:k]
         parte2 = lista[k:2*k]
@@ -39,8 +40,10 @@ def moneda_falsa(lista):
         
         a=sum(parte1)
         b=sum(parte2)
+        # Si las dos primeras parte estaban en equilibrio, la moneda estará en la tercera parte
         if a==b:
             return moneda_falsa(parte3)
+        # Si por el contrario, estaban desequilibradas, estará en la primera o segunda parte
         else:
             return moneda_falsa(parte1+parte2)
         
