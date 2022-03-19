@@ -5,13 +5,15 @@ def moneda_falsa(lista):
     OBJ: Determinar si la moneda falsa de un conjunto es mayor o menor
     PRE: len(lista)>=3
     """
-    if (len(lista)==6):
+    # Casos base (Cuándo ya no se puede dividir más se calculan los problemas pequeños por una aproximación lineal)
+    n = len(lista)
+    if (n==6):
         return moneda_falsa(lista[0:3]) and moneda_falsa(lista[3:6])
-    elif (len(lista)==5):    
+    elif (n==5):
         return moneda_falsa(lista[0:3]) and moneda_falsa(lista[2:5])
-    elif (len(lista)==4):
+    elif (n==4):
         return moneda_falsa(lista[0:3]) and moneda_falsa(lista[1:4])
-    elif (len(lista)==3):
+    elif (n==3):
         if lista[0]<lista[1]:
             if lista[0]==lista[2]:
                 return True
@@ -29,8 +31,8 @@ def moneda_falsa(lista):
                 return False
             else:
                 return None
-    elif (len(lista)>6):
-        k = len(lista)//3
+    elif (n>6):
+        k = n//3
         parte1 = lista[0:k]
         parte2 = lista[k:2*k]
         parte3 = lista[2*k:]
