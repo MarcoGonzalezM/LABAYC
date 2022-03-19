@@ -1,7 +1,7 @@
 def moneda_falsa(lista):
     """
-    list(num)-->int
-    1 si la moneda falsa es de mayor peso, -1 si menor, 0 si todos los elementos son iguales
+    list(num)-->bool
+    True si la moneda falsa es de mayor peso, False si menor, None si todos los elementos son iguales
     OBJ: Determinar si la moneda falsa de un conjunto es mayor o menor
     PRE: len(lista)>=3
     """
