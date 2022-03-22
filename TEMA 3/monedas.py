@@ -49,7 +49,10 @@ def moneda_falsa(lista):
             return moneda_falsa(parte1+parte2) # Función recursiva: T(2*n//3)
 
     #Análisis de la recursividad:
-    #T(n) = k * T(n/b) + f(n) = 2 * T(n/n//3) + f(n)
+    # Según el método maestro
+    # T(n) = k * T(n/b) + f(n)              k = 2, b = 3/2, f(n) = 2n + 9   k>b^p
+    # T(n) = 2 * T(2n/3) + 2n + 9 => T(n) = O(n^(2log_(3/2)))
+
         
 caso_1 = []
 for i in range(27):
