@@ -31,7 +31,10 @@ def mergesort(c):
     res += l + r
     return res, contador
 
-# T(n) = k * T(n/b) + f(n)
+    # Análisis de la recursividad:
+    # Según el método maestro
+    # T(n) = k * T(n/b) + f(n)              k = 2, b = 2, f(n) = 3/2(n^2), p=2  k<b^p
+    # T(n) = 2 · T(n/2) + 3(n^2)/2 => T(n) = O(n^2)
 
 print(mergesort([1,90,52,26,7,2,46,78,3,7,12,74,26,78]))
 
