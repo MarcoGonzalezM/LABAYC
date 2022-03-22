@@ -7,12 +7,8 @@ def moneda_falsa(lista):
     """
     # Casos base (Cuándo ya no se puede dividir más se calculan los problemas pequeños por una aproximación lineal)
     n = len(lista)                                                       
-    if (n==6):
-        return moneda_falsa(lista[0:3]) and moneda_falsa(lista[3:6])
-    elif (n==5):
-        return moneda_falsa(lista[0:3]) and moneda_falsa(lista[2:5])
-    elif (n==4):
-        return moneda_falsa(lista[0:3]) and moneda_falsa(lista[1:4])
+    if (n<=6 and n>3):
+        return moneda_falsa(lista[0:3]) and moneda_falsa(lista[-3:])
     elif (n==3):
         if lista[0]<lista[1]:
             if lista[0]==lista[2]:
@@ -23,7 +19,7 @@ def moneda_falsa(lista):
             if lista[0]==lista[2]:
                 return False
             else:
-                return True
+                return True 
         else:
             if lista[0]<lista[2]:
                 return True
@@ -48,7 +44,7 @@ def moneda_falsa(lista):
         else:
             return moneda_falsa(parte1+parte2) # Función recursiva: T(2*n//3)
 
-    #Análisis de la recursividad:
+    # Análisis de la recursividad:
     # Según el método maestro
     # T(n) = k * T(n/b) + f(n)              k = 2, b = 3/2, f(n) = 2n + 9   k>b^p
     # T(n) = 2 * T(2n/3) + 2n + 9 => T(n) = O(n^(2log_(3/2)))
