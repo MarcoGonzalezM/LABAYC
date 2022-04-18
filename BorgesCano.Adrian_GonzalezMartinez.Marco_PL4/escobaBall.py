@@ -44,3 +44,4 @@ def torneo(n,vc,d):
     return d/acumulador
     
 print(torneo(2,[40,20,15,25],10))
+print(torneo(3,[15,35,20,30],10))
