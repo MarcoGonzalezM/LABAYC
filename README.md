@@ -15,6 +15,14 @@ Se ha extendido la documentación explicativa del código.
 
 ##### Ejercicio 3:
 
+Se ha añadido un razonamiento sobre distintas estrategias que se puedan tratar para resolver el problema.
+
 Sobre el comentario: "El algoritmo implementado no es correcto porque el número de comparaciones es $> 3\frac{n}{2}$.", ya se razonó en el laboratorio que su número de comparaciones realmente no excedía $3\frac{n}{2}$.
+
+También se ha añadido una explicación detallada de uno de los casos de prueba del problema.
+
+##### Ejericicio 4:
+
+
 
 
