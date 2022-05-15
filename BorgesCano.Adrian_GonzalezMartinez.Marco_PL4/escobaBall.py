@@ -30,10 +30,10 @@ def torneo(n,vc,d):
             for k in range(n+1):
                 for l in range(n+1):
                     if i<n and j<n and k<n and l<n:
-                        tabla[i][j][k][l+1] = p[3]*tabla[i][j][k][l]
-                        tabla[i][j][k+1][l] = p[2]*tabla[i][j][k][l]
-                        tabla[i][j+1][k][l] = p[1]*tabla[i][j][k][l]
-                        tabla[i+1][j][k][l] = p[0]*tabla[i][j][k][l]
+                        tabla[i][j][k][l+1] += p[3]*tabla[i][j][k][l]
+                        tabla[i][j][k+1][l] += p[2]*tabla[i][j][k][l]
+                        tabla[i][j+1][k][l] += p[1]*tabla[i][j][k][l]
+                        tabla[i+1][j][k][l] += p[0]*tabla[i][j][k][l]
 
     acumulador = 0
     for j in range(n+1):
@@ -43,5 +43,6 @@ def torneo(n,vc,d):
 
     return d/acumulador
     
-print(torneo(2,[40,20,15,25],10))
-print(torneo(3,[15,35,20,30],10))
+print(10/torneo(1,[40,20,15,25],10))    
+print(10/torneo(2,[40,20,15,25],10))
+print(10/torneo(3,[15,35,20,30],10))
