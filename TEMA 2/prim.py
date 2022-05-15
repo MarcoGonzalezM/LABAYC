@@ -14,7 +14,7 @@ def prim (grafo):
     """ 
     matriz_ady_grafo -> matriz_ady_grafo   
     OBJ: Devolver el árbol de recubrimiento mínimo de un grafo dado mediante el algoritmo de Prim.
-    PRE: El grafo debe ser no dirigido.
+    PRE: El grafo debe ser no dirigido y conexo.
     """
     #Interpretar candidatos. Convertimos el grafo a una lista de nodos y una lista de aristas
     nodos_candidatos = []
@@ -22,8 +22,7 @@ def prim (grafo):
     for i in range(len(grafo)):
         nodos_candidatos.append(i)
         for j in range(i):
-            if grafo[i][j]>0:
-                aristas_candidatos.append([i,j,grafo[i][j]])
+            aristas_candidatos.append([i,j,grafo[i][j]])
 
     nodos_solucion = []
     aristas_solucion = []
@@ -48,8 +47,11 @@ def prim (grafo):
     arbol = []
     for i in range(len(nodos_solucion)): 
         lista_aux = []
-        for i in range(len(nodos_solucion)):
-            lista_aux.append(0)
+        for j in range(len(nodos_solucion)):
+            if i==j:
+                lista_aux.append(0)
+            else:
+                lista_aux.append(inf)
         arbol.append(lista_aux)
             
     for arista in aristas_solucion:
@@ -59,7 +61,7 @@ def prim (grafo):
     return arbol
 
 #PROBADORES
-grafo1=[[0,1,0,5],[1,0,4,5],[0,4,0,2],[5,5,2,0]]
-grafo2=[[0,4,0,8],[4,0,3,8],[0,3,0,6],[8,8,6,0]]
+grafo1=[[0,1,inf,5],[1,0,4,5],[inf,4,0,2],[5,5,2,0]]
+grafo2=[[0,4,inf,8],[4,0,3,8],[inf,3,0,6],[8,8,6,0]]
 print("Resultado del grafo 1 =",prim(grafo1))
 print("Resultado del grafo 2 =",prim(grafo2))
