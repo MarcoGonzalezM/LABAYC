@@ -29,7 +29,7 @@ También se ha añadido una explicación detallada de uno de los casos de prueba
 
 ##### Ejercicio 6:
 
-​	
+Se ha desarrollado un nuevo algoritmo, el cuál tiene un coste menor. El algoritmo implementado anteriormente se ha explicado como una forma más costosa de resolver el problema. También se ha razonado la complejidad de ambos algoritmos para demostrar que el nuevo algoritmo es mejor.
 
 ### TEMA 3:
 
@@ -46,3 +46,6 @@ Asimismo la explicación del algoritmo y el ejemplo recogen este detalle.
 
 ### TEMA 5:
 
+##### Ejercicios 3 y 6:
+
+Se han explicado algunos detalles que quedaban imprecisos sobre el funcionamiento del algoritmo. Se ha añadido también, el resultado que calcula la ejecución del código correspondiente.
