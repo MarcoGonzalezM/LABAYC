@@ -21,7 +21,13 @@ Sobre el comentario: "El algoritmo implementado no es correcto porque el número
 
 También se ha añadido una explicación detallada de uno de los casos de prueba del problema.
 
-##### Ejericicio 4:
+##### Ejercicio 4:
+
+Se ha modificado el programa para que aristas que no existan se consideren aristas de coste infinito.
+
+También se ha añadido una explicación detallada de uno de los casos de prueba del problema.
+
+##### Ejercicio 6:
 
 
 
